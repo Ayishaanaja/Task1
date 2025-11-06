@@ -1,0 +1,25 @@
+Inheritence:
+1.single iheritence//a father and son inheritence
+2.hierarchical inheritence and multilevel inheritence//addition and subtraction of numbers in parent class
+3.overloading and overriding//created simple classess and did the overloading and overriding also did the constructor overriding
+
+
+Collections:
+1.College database//contains a class called collegedb which stores the private variables and Studentdetails class creates the arraylist of collegedb and adds the details using addDetails method and veiws each student using veiw details.
+2.Storing different object in arraylist//created different types of collections and added values to it.
+3.Employee details//same as the first task created a class emp with private variables and created an arraylist of emp and added details of the employee and also removed the employees using terminate function
+
+Abstraction:
+1.Animal definition//cratead an abstract class Animal with predefined functions no of legs and wild animals then created a child class extending animal class and defining the abstract method name of the animal and type of food it eats.
+2. Vehicle definition //created an abstract class Vehicle with abstract methods like fuelType and maxSpeed, then created child classes like Car that define these methods and also added a method hasWheels in the parent class.
+3. Electronic devices //created an abstract class ElectronicDevice with abstract methods powerOn and powerOff, then created child classes like Laptop and defined the abstract methods, also added a method deviceInfo in the parent class.
+
+Interface:
+1.Payment gateway //created an interface PaymentGateway with methods processPayment and refund, then created classes like UPI that implement the interface and simulate payment transactions.
+2. Drawing shapes //created an interface Drawable with method draw and implemented it in a class Circle, then created an object of Circle and called the draw method to display the shape-specific message.
+3.Smart appliances //created an interface SmartControl with methods turnOn, turnOff and setTimer, then created classes like SmartFan that implement the interface and control the appliances.
+
+Encapsulation:
+1.Bank account //created a class BankAccount with private variables accountNumber, balance and accountHolder, then added methods like deposit and withdraw with validation and used getters and setters to access the variables.
+2.Library system //created a class Book with private variables title, author and isAvailable, then added methods borrowBook and returnBook to manage availability and used encapsulation to prevent borrowing unavailable books.
+3.Course enrollment //created a class Course with private variables courseName, enrolledStudents and maxCapacity, then added methods enrollStudent and removeStudent and used encapsulation to enforce capacity limits.
