@@ -1,0 +1,45 @@
+package com.example.web.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.web.bean.StudentBean;
+import com.example.web.dao.AdminDao;
+
+@Service
+public class AdminService
+{
+@Autowired
+private AdminDao adao;
+public int addStudent(StudentBean sb) {
+	if(sb!=null) {
+		adao.save(sb);
+		return 1;
+	}
+	else
+		return 0;
+}
+public int updateStudent(StudentBean sb) {
+	if(sb!=null) {
+		Optional<StudentBean> opt=adao.findById(sb.getRollno());
+		if(opt.isPresent()) {
+			adao.save(sb);
+			return 1;
+		}}
+	return 0;
+	}
+public int deleteStudent(int rollno) {
+	if(rollno!=0) {
+		adao.deleteById(rollno);
+		return 1;
+	}
+	return 0;
+}
+public List<StudentBean> selectAll(){
+	return adao.findAll();
+}
+}
+

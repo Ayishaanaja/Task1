@@ -1,0 +1,26 @@
+package com.example.demo;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.example.demo.bean.EmployeeBean;
+
+public class Main {
+public static void main(String[] args) {
+	Configuration cfg=new Configuration().configure("hibernate.cfg.xml");
+	SessionFactory sf=cfg.buildSessionFactory();
+	EmployeeBean eb=new EmployeeBean();
+	//eb.setId(101);
+	eb.setName("Aiswarya");
+	eb.setSalary(90000);
+	Session s=sf.openSession();
+	Transaction t=s.beginTransaction();
+	s.save(eb);
+	System.out.println("Session Stored successfullyyy..........");
+	t.commit();
+	
+	
+}
+}

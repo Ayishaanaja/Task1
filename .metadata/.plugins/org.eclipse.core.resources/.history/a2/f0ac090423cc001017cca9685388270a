@@ -1,0 +1,60 @@
+package com.example.web.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.web.bean.StudentBean;
+import com.example.web.service.AdminService;
+
+@Controller
+@RequestMapping("/admin")
+public class AdminController {
+@Autowired
+private AdminService adserv;
+
+@PostMapping("/user")
+public String meth6(@RequestParam("user")String user,@RequestParam("pass")String pass) {
+	if(user.equals("AD-001")&&(pass.equals("AD-001")))
+	{
+		return "redirect:/userData";
+	}
+	return "<h1>Welocme<h2>";
+}
+
+
+@PostMapping("/userData")
+@ResponseBody
+public String meth() {
+	return "<h1>Welcome to User Login</h1>";
+}
+
+@PostMapping("/addStudent")
+public String meth1(@RequestBody StudentBean sb) {
+	return "<h1>"+adserv.addStudent(sb)+" record inserted successfull....</h1>";
+	
+}
+@PutMapping("/updateStudent")
+public String meth2(@RequestBody StudentBean sb) {
+	return "<h1>"+adserv.updateStudent(sb)+" record update successfull....</h1>";	
+}
+@DeleteMapping("/deleteStudent/{rollno}")
+public String meth3(@PathVariable ("rollno")int rollno) {
+	return "<h1>"+adserv.deleteStudent(rollno)+" record deleted successfull....</h1>";	
+}
+@GetMapping("/selectAll")
+public List<StudentBean> meth4(){
+	return adserv.selectAll();
+}
+}

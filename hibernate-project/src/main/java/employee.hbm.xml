@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+
+"-//Hibernate/Hibernate Mapping DTD//EN"
+
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+
+<hibernate-mapping>
+
+<class name="com.example.demo.bean.EmployeeBean" table="emp888">
+
+
+
+<id name = "id" type = "int" column = "id">
+
+<generator class="assigned"/>
+
+</id>
+
+
+
+<property name="name" type="java.lang.String">
+
+<column name="name" />
+
+</property>
+
+<property name="salary" type="java.lang.Integer">
+
+<column name="salary" />
+
+</property>
+
+
+
+</class>
+
+</hibernate-mapping>

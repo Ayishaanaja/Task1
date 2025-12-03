@@ -1,0 +1,15 @@
+package com.example.demo.bean;
+
+import javax.persistence.*; 
+
+@Entity
+@Table(name="manager")
+public class ManagerBean {
+@Id
+@GeneratedValue
+private int id;
+@Column
+private String name;
+@Column
+private int salary;
+}
